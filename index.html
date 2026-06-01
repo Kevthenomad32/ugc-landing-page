@@ -570,6 +570,43 @@
       margin: 0 auto;
     }
 
+    /* PORTFOLIO */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+    }
+
+    .portfolio-card {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .portfolio-card .instagram-media {
+      margin: 0 auto !important;
+      min-width: unset !important;
+    }
+
+    .portfolio-placeholder {
+      aspect-ratio: 9 / 16;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .portfolio-placeholder:hover { border-color: var(--gold); transform: translateY(-3px); }
+
+    .placeholder-inner { text-align: center; padding: 1.5rem; }
+    .placeholder-icon { font-size: 2.5rem; margin-bottom: 1rem; opacity: 0.7; }
+    .placeholder-inner p { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+    .placeholder-inner span { color: var(--muted); font-size: 0.8rem; }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -586,6 +623,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#packages">Packages</a></li>
       <li><a href="#contact">Work With Me</a></li>
     </ul>
@@ -774,6 +812,52 @@
       </div>
     </div>
   </section>
+
+  <div class="divider"></div>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="container">
+      <p class="section-tag">Portfolio</p>
+      <h2 class="section-title">Recent Work</h2>
+      <p class="section-sub">A look at the content I'm creating — real locations, real moments. Follow along on Instagram for the latest.</p>
+
+      <!--
+        TO ADD AN INSTAGRAM POST:
+        1. On Instagram, open the post → click "..." → "Embed" → copy the code
+           (or just send Kevin's links to Claude and they'll be dropped in here).
+        2. Paste each post's <blockquote class="instagram-media">...</blockquote> inside a
+           <div class="portfolio-card"> below, replacing a placeholder card.
+        The instagram embed.js script at the bottom of this section renders them automatically.
+      -->
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZAIF2xHMFo/" data-instgrm-version="14"></blockquote>
+        </div>
+        <div class="portfolio-card portfolio-placeholder">
+          <div class="placeholder-inner">
+            <div class="placeholder-icon">🎬</div>
+            <p>Coming soon</p>
+            <span>New clip dropping</span>
+          </div>
+        </div>
+        <div class="portfolio-card portfolio-placeholder">
+          <div class="placeholder-inner">
+            <div class="placeholder-icon">✈️</div>
+            <p>Coming soon</p>
+            <span>Travel content</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="https://instagram.com/kevthenomad32" target="_blank" rel="noopener" class="btn-primary">📸 Follow @kevthenomad32</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram embed script: renders any .instagram-media blockquotes added above -->
+  <script async src="//www.instagram.com/embed.js"></script>
 
   <div class="divider"></div>
 
